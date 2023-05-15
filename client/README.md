@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# React-Redux Boilerplate
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React-Redux Boilerplate is a project template that provides an easier and faster way to start a React+Redux project with TypeScript. It comes with various features, including React, Redux, TypeScript, Webpack, Jest, Tailwind, EsLint, and Prettier.
 
-## Available Scripts
+## Features
+### React
+A popular JavaScript library for building user interfaces. It allows developers to create reusable UI components and provides a declarative approach to rendering views.
 
-In the project directory, you can run:
+### Redux
+A predictable state container for JavaScript apps. It provides a centralized store for managing application state and makes it easy to reason about state changes.
 
-### `npm start`
+### Redux-Toolkit
+An opinionated, batteries-included package for efficient Redux development. It includes utilities for simplified Redux store setup, creating reducers and actions, and handling immutable updates.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### TypeScript
+A superset of JavaScript that adds optional static type checking and other features to the language. It helps catch errors earlier in the development process and improves code readability and maintainability.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Webpack
+A module bundler that allows developers to bundle and optimize their code for production. It supports a wide range of asset types, including JavaScript, CSS, and images, and provides powerful features for code splitting and lazy loading.
 
-### `npm test`
+### Jest
+A popular testing framework for JavaScript applications. It provides a simple and intuitive API for writing tests and supports a wide range of features, including mocking, code coverage, and snapshot testing.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tailwind
+A utility-first CSS framework that provides a set of pre-defined styles for common UI elements. It allows developers to quickly build responsive and consistent user interfaces without writing custom CSS.
 
-### `npm run build`
+### EsLint
+A popular linter for JavaScript that helps identify and fix syntax errors, coding style issues, and other common programming errors. It provides a wide range of customizable rules and integrates with many popular text editors and build tools.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prettier
+An opinionated code formatter that helps ensure code consistency and readability across teams. It supports a wide range of languages and integrates with many popular text editors and build tools.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Esri-Loader 
+A lightweight library for loading the ArcGIS API for JavaScript asynchronously. It helps improve application performance by loading only the required modules when needed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
+Before you start, make sure you have a fresh version of [Node.js](https://nodejs.org/en/) and NPM installed. The current Long Term Support (LTS) release is an ideal starting point.
 
-### `npm run eject`
+1. Fork this repository and clone your own fork to your computer: 
+    ```sh
+    git clone https://github.com/YOUR_USERNAME/react-redux-boilerplate.git
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. From the project's root directory, install the required packages (dependencies):
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```sh
+    npm install
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. To run and test the app on your local machine (http://localhost:8080):
 
-## Learn More
+    ```sh
+    npm run start
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    This will start a server instance and begin listening for connections from localhost on port `8080`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. To build/deploye the app, you can run:
 
-### Code Splitting
+    ```sh
+    npm run build
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    This will place all files needed for deployment into the `/dist` directory.
 
-### Analyzing the Bundle Size
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```sh
+├── public  
+    ├── favicon.ico
+    ├── index.html              # html template for the app
+    ├── thumbnail.jpg           # an image will be used in og:image meta tag
+├── src                         # Source code.
+    ├── components              # React components
+    ├── constants               # app-wide constants (text, URLs, themes and etc)
+    ├── contexts                # React contexts
+    ├── hooks                   # reusable custom hooks
+    ├── pages                   # Page components
+    ├── services                # API calls
+    ├── static                  # static assets
+    ├── store                   # Redux store
+        ├── Map                 # contains reducer, selectors and thunks for Map "slice" of the redux store
+        ├── configureStore.ts   # configure the app's redux store
+        ├── getPreloadedState.ts 
+        ├── rootReducers.ts     # combine reducers from all slices
+    ├── styles                  # app-wide styles
+    ├── types                   # type definitions
+    ├── utils                   # utility functions
+    └── index.tsx               # entry point for the app
+├── .babelrc                    # Babel configuration
+├── .eslintrc.js                # ESLint configuration
+├── .prettierrc.js              # Prettier configuration
+├── tsconfig.json               # TypeScript configuration
+├── webpack.config.js           # Webpack configurations
+├── tailwind.config.js          # Tailwind CSS configurations
+├── postcss.config.js           # PostCSS configurations
+```
 
-### Making a Progressive Web App
+## Issues
+Find a bug or want to request a new feature? Please let me know by submitting an issue.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Licensing
+Copyright 2022 Jinnan Zhang
 
-### Advanced Configuration
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   http://www.apache.org/licenses/LICENSE-2.0
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
