@@ -1,9 +1,10 @@
 import React from "react";
-
+import '../style.css';
 
 const Home=()=>{
   return(
-    <h1>Hey Amrath</h1>
+    <div className="home"><div><h1>Welcome to Authentication API project</h1></div></div>
+    
   )
 }
 
