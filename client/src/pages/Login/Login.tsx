@@ -33,23 +33,23 @@ const Login=()=>{
     return(
     <div className="App">
     <div className='inputform'>
+      <h2>Login</h2>
+      <div></div>
+      <form onSubmit={handleSubmit}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h4>Welcome!</h4>
+        <h4>Welcome</h4>
       </header>
-      <form onSubmit={handleSubmit}>
-      <div>
+      <div className="form-elements">
       <label htmlFor="email" className="formtext">Email &nbsp;</label>
       <input className="email" type="text" placeholder='Enter the email' required onChange={(e)=>{setEmail(e.target.value)}}></input>
       </div>
       <br></br>
-      <div>
+      <div className="form-elements">
       <label htmlFor="password" className="formtext">Password &nbsp;</label>
       <input className="password" type="password" placeholder='Enter the Password' required onChange={(e)=>{setPassword(e.target.value)}}></input>
       </div>
-      <div className='submission'>
-      <button type='submit'>Login</button>
-      </div>
+      <button type='submit' className='button'>Login</button>
       <p>Don't have a account</p><a className='link'><NavLink to='/register'>Create account!</NavLink></a>
       { error!=='' &&<p className='error'>{error}</p>}
       </form>

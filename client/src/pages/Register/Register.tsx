@@ -71,7 +71,7 @@ const Register=()=>{
       <label htmlFor="repeat_password">Confirm Password</label>
       <input type="text" id="repeat_password" placeholder="Confirm Password" required onChange={(e)=>{setRepeat(e.target.value)}}></input>
     </div>
-    <button type="submit">Register</button>
+    <button type="submit" className='button'>Register</button>
     <p>Already have an account </p><a className="link"><NavLink to='/login'>Login!</NavLink></a>
     { error!=='' &&<p className='error'>{error}</p>}
   </form>
